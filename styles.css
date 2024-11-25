@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #4CAF50;
+}
+
+.pitch {
+    position: relative;
+    width: 80vw;
+    height: 90vh;
+    background: url('pitch.png') no-repeat center center;
+    background-size: cover;
+    border: 5px solid white;
+}
+
+.player-card {
+    position: absolute;
+    width: 100px;
+    height: 150px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.player-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.player-info {
+    font-size: 12px;
+}
