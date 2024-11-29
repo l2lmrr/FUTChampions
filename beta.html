@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EA FC 25 Tactics & Formations</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <!-- Page Container -->
+    <div class="container mx-auto p-6">
+
+        <!-- Title Section -->
+        <header>
+            <h1 class="text-4xl font-bold mb-4">EA FC 25 Lorenz Cipher</h1>
+            <p class="text-gray-400">Build Custom Tactics & Formations</p>
+        </header>
+
+        <!-- New Player Button -->
+        <div class="flex justify-end mt-6 mb-4">
+            <button id="newPlayerBtn" 
+                class="bg-blue-600 text-white font-bold py-2 px-4 rounded hover:bg-blue-500 transition duration-300"
+            >
+                New Player
+            </button>
+        </div>
+
+        <!-- Main Content -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 mt-8">
+           <!-- Formation Pitch -->
+           <div class="col-span-2 relative bg-gray-800 rounded-lg p-6 flex items-center justify-center">
+            <!-- Pitch Background -->
+            <div class="relative">
+                <img src="pitch.svg" alt="Pitch" class="max-w-full h-auto">
+
+                <!-- Goalkeeper -->
+                <div class="absolute top-[80%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                    <button 
+                    id="player-button"
+                    class="flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-transform transition-shadow duration-200 rounded-full" 
+                    style="width: 120px; height: 120px; background-image: url('Spot.webp'); background-size: contain; background-repeat: no-repeat; background-position: center;">
+                    <div id="plus-icon"class="flex items-center justify-center rounded-full bg-white text-gray-800 font-bold" 
+                        style="width: 20px; height: 20px; font-size: 12px;">
+                        +
+                    </div>
+                </button>
+                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md">
+                        GK
+                    </div>
+                </div>
+
+                <!-- Defenders -->
+                <div class="absolute top-[58%] left-[15%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                    <button 
+                    class="flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-transform transition-shadow duration-200 rounded-full" 
+                    style="width: 120px; height: 120px; background-image: url('Spot.webp'); background-size: contain; background-repeat: no-repeat; background-position: center;">
+                    <div class="flex items-center justify-center rounded-full bg-white text-gray-800 font-bold" 
+                        style="width: 20px; height: 20px; font-size: 12px;">
+                        +
+                    </div>
+                </button>
+                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md">
+                        LB
+                    </div>
+                </div>
+                <div class="absolute top-[65%] left-[35%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                    <button 
+                    class="flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-transform transition-shadow duration-200 rounded-full" 
+                    style="width: 120px; height: 120px; background-image: url('Spot.webp'); background-size: contain; background-repeat: no-repeat; background-position: center;">
+                    <div class="flex items-center justify-center rounded-full bg-white text-gray-800 font-bold" 
+                        style="width: 20px; height: 20px; font-size: 12px;">
+                        +
+                    </div>
+                </button>
+                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md">
+                        CB
+                    </div>
+                </div>
+                <div class="absolute top-[65%] left-[65%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                    <button 
+                    class="flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-transform transition-shadow duration-200 rounded-full" 
+                    style="width: 120px; height: 120px; background-image: url('Spot.webp'); background-size: contain; background-repeat: no-repeat; background-position: center;">
+                    <div class="flex items-center justify-center rounded-full bg-white text-gray-800 font-bold" 
+                        style="width: 20px; height: 20px; font-size: 12px;">
+                        +
+                    </div>
+                </button>
+                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md">
+                        CB
+                    </div>
+                </div>
+                <div class="absolute top-[58%] left-[85%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                    <button 
+                    class="flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-transform transition-shadow duration-200 rounded-full" 
+                    style="width: 120px; height: 120px; background-image: url('Spot.webp'); background-size: contain; background-repeat: no-repeat; background-position: center;">
+                    <div class="flex items-center justify-center rounded-full bg-white text-gray-800 font-bold" 
+                        style="width: 20px; height: 20px; font-size: 12px;">
+                        +
+                    </div>
+                </button>
+                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md">
+                        RB
+                    </div>
+                </div>
+
+                <!-- Midfielders -->
+                <div class="absolute top-[38%] left-[30%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                    <button 
+                    class="flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-transform transition-shadow duration-200 rounded-full" 
+                    style="width: 120px; height: 120px; background-image: url('Spot.webp'); background-size: contain; background-repeat: no-repeat; background-position: center;">
+                    <div class="flex items-center justify-center rounded-full bg-white text-gray-800 font-bold" 
+                        style="width: 20px; height: 20px; font-size: 12px;">
+                        +
+                    </div>
+                </button>
+                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md">
+                        CM
+                    </div>
+                </div>
+                <div class="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                    <button 
+                    class="flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-transform transition-shadow duration-200 rounded-full" 
+                    style="width: 120px; height: 120px; background-image: url('Spot.webp'); background-size: contain; background-repeat: no-repeat; background-position: center;">
+                    <div class="flex items-center justify-center rounded-full bg-white text-gray-800 font-bold" 
+                        style="width: 20px; height: 20px; font-size: 12px;">
+                        +
+                    </div>
+                </button>
+                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md">
+                        CDM
+                    </div>
+                </div>
+                <div class="absolute top-[38%] left-[70%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                    <button 
+                    class="flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-transform transition-shadow duration-200 rounded-full" 
+                    style="width: 120px; height: 120px; background-image: url('Spot.webp'); background-size: contain; background-repeat: no-repeat; background-position: center;">
+                    <div class="flex items-center justify-center rounded-full bg-white text-gray-800 font-bold" 
+                        style="width: 20px; height: 20px; font-size: 12px;">
+                        +
+                    </div>
+                </button>
+                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md">
+                        CM
+                    </div>
+                </div>
+
+                <!-- Forwards -->
+                <div class="absolute top-[20%] left-[20%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                    <button 
+                    class="flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-transform transition-shadow duration-200 rounded-full" 
+                    style="width: 120px; height: 120px; background-image: url('Spot.webp'); background-size: contain; background-repeat: no-repeat; background-position: center;">
+                    <div class="flex items-center justify-center rounded-full bg-white text-gray-800 font-bold" 
+                        style="width: 20px; height: 20px; font-size: 12px;">
+                        +
+                    </div>
+                </button>
+                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md">
+                        LW
+                    </div>
+                </div>
+                <div class="absolute top-[10%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                    <button 
+                    class="flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-transform transition-shadow duration-200 rounded-full" 
+                    style="width: 120px; height: 120px; background-image: url('Spot.webp'); background-size: contain; background-repeat: no-repeat; background-position: center;">
+                    <div class="flex items-center justify-center rounded-full bg-white text-gray-800 font-bold" 
+                        style="width: 20px; height: 20px; font-size: 12px;">
+                        +
+                    </div>
+                </button>
+                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md">
+                        ST
+                    </div>
+                </div>
+                <div class="absolute top-[20%] left-[80%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                    <button 
+                        class="flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-transform transition-shadow duration-200 rounded-full" 
+                        style="width: 120px; height: 120px; background-image: url('Spot.webp'); background-size: contain; background-repeat: no-repeat; background-position: center;">
+                        <div class="flex items-center justify-center rounded-full bg-white text-gray-800 font-bold" 
+                            style="width: 20px; height: 20px; font-size: 12px;">
+                            +
+                        </div>
+                    </button>
+                    <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md">
+                        RW
+                    </div>
+                </div>
+                </div>
+        </div>
+            <!-- Sidebar Controls -->
+            <aside class="bg-gray-800 rounded-lg p-6">
+            
+                <!-- Formation Dropdown -->
+                <div class="mb-4">
+                  <label for="formation" class="block text-sm font-bold mb-1">Formation</label>
+                  <div id="formationWrapper" class="relative">
+                    <!-- Dropdown Header -->
+                    <div
+                      id="formationDropdown"
+                      class="w-full p-2 bg-gray-700 border border-gray-600 rounded cursor-pointer flex items-center justify-between"
+                    >
+                      <span id="selectedFormation">Select Formation</span>
+                      <span>▼</span>
+                    </div>
+                    <!-- Dropdown Options -->
+                    <div
+                      id="formationList"
+                      class="hidden absolute top-full left-0 w-full bg-gray-800 border border-gray-600 rounded mt-1 grid grid-cols-3 gap-1 p-2 z-10 max-h-48 overflow-y-auto"
+                    >
+                      <!-- Options will be dynamically generated -->
+                    </div>
+                  </div>
+                </div>
+
+              <!-- Players List -->
+                <div class="mb-4">
+                       <label for="build-up" class="block text-sm font-bold mb-1 text-white">Players List</label>
+                             <div id="playersList" class="grid grid-cols-2 gap-4">
+                                  <!-- Player cards will be dynamically rendered here -->
+                             </div>
+                 </div>
+            </aside>
+        </div>
+    </div>
+
+    <!-- players list -->
+
+<!-- Player list container -->
+<div id="player-list-container" class="hidden fixed inset-0 bg-gray-800 bg-opacity-50 flex items-center justify-center">
+    <div class="bg-white p-4 rounded shadow-lg">
+        <ul id="player-list" class="list-disc pl-5"></ul>
+    </div>
+</div>
+
+<!-- Player data container -->
+<div id="player-data-container" class="mt-4 p-4 border rounded shadow"></div>
+
+
+<!--  add form -->
+<div id="playerFormModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
+  <div class="bg-gray-800 p-4 rounded-lg w-[90%] max-w-lg relative">
+ 
+    <h2 class="text-lg font-bold mb-3">Add New Player</h2>
+    <form id="playerForm" class="grid grid-cols-2 gap-2">
+      <div>
+        <label for="name" class="block text-sm font-bold mb-1">Name</label>
+        <input id="name" type="text" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
+      </div>
+      <div>
+        <label for="photo" class="block text-sm font-bold mb-1">Photo URL</label>
+        <input id="photo" type="url" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
+      </div>
+      <div>
+        <label for="mainPosition" class="block text-sm font-bold mb-1">Main Position</label>
+        <select id="mainPosition" class="w-full p-1 bg-gray-700 border border-gray-600 rounded">
+          <option>GK</option>
+          <option>LB</option>
+          <option>CB</option>
+          <option>RB</option>
+          <option>CDM</option>
+          <option>CM</option>
+          <option>CAM</option>
+          <option>LM</option>
+          <option>RM</option>
+          <option>LW</option>
+          <option>RW</option>
+          <option>ST</option>
+        </select>
+      </div>
+      <div>
+        <label for="secondaryPosition" class="block text-sm font-bold mb-1">Secondary Position</label>
+        <select id="secondaryPosition" class="w-full p-1 bg-gray-700 border border-gray-600 rounded">
+          <option>GK</option>
+          <option>LB</option>
+          <option>CB</option>
+          <option>RB</option>
+          <option>CDM</option>
+          <option>CM</option>
+          <option>CAM</option>
+          <option>LM</option>
+          <option>RM</option>
+          <option>LW</option>
+          <option>RW</option>
+          <option>ST</option>
+        </select>
+      </div>
+      <div>
+        <label for="nationality" class="block text-sm font-bold mb-1">Nationality</label>
+        <input id="nationality" type="text" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
+      </div>
+      <div>
+        <label for="flag" class="block text-sm font-bold mb-1">Flag URL</label>
+        <input id="flag" type="url" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
+      </div>
+      <div>
+        <label for="club" class="block text-sm font-bold mb-1">Club</label>
+        <input id="club" type="text" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
+      </div>
+      <div>
+        <label for="logo" class="block text-sm font-bold mb-1">Club Logo URL</label>
+        <input id="logo" type="url" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
+      </div>
+      <div>
+        <label for="Rating" class="block text-sm font-bold mb-1">Rating</label>
+        <input id="Rating" type="number" min="5" max="99" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
+      </div>
+      <div>
+        <label for="pace" class="block text-sm font-bold mb-1">Pace</label>
+        <input id="pace" type="number" min="5" max="99" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
+      </div>
+      <div>
+        <label for="shooting" class="block text-sm font-bold mb-1">Shooting</label>
+        <input id="shooting" type="number" min="5" max="99" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
+      </div>
+      <div>
+        <label for="passing" class="block text-sm font-bold mb-1">Passing</label>
+        <input id="passing" type="number" min="5" max="99" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
+      </div>
+      <div>
+        <label for="dribbling" class="block text-sm font-bold mb-1">Dribbling</label>
+        <input id="dribbling" type="number" min="5" max="99" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
+      </div>
+      <div>
+        <label for="defending" class="block text-sm font-bold mb-1">Defending</label>
+        <input id="defending" type="number" min="5" max="99" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
+      </div>
+      <div>
+        <label for="physical" class="block text-sm font-bold mb-1">Physical</label>
+        <input id="physical" type="number" min="5" max="99" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
+      </div>
+      <div class="flex justify-between col-span-2 mt-4">
+        <button 
+          id="closeModalBtn" 
+          type="button" 
+          class="bg-red-600 text-white font-bold py-2 px-3 rounded hover:bg-red-500 transition duration-300"
+        >
+          Close
+        </button>
+        <button 
+          id="addPlayerBtn" 
+          type="submit" 
+          class="bg-green-600 text-white font-bold py-2 px-3 rounded hover:bg-green-500 transition duration-300"
+        >
+          Add Player
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+    
+  <script src="FUT.js"></script>
+
+
+</body>
+</html>
