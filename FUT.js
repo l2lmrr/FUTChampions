@@ -103,124 +103,229 @@ function addPlayerToUI(player) {
   playersList.appendChild(playerItem);
 }
 
-// Formation Data with exact positions (from formation.html)
-const formationsData = {
-  "4-3-3": {
-    GK: { top: "83%", left: "50%" },     // Goalkeeper
-    LB: { top: "65%", left: "30%" },     // Left-back
-    CB1: { top: "60%", left: "50%" },    // Center-back 1
-    CB2: { top: "65%", left: "70%" },    // Center-back 2
-    RB: { top: "58%", left: "85%" },     // Right-back
-    LM: { top: "25%", left: "20%" },     // Left Midfielder
-    CM1: { top: "38%", left: "37%" },    // Central Midfielder 1
-    CM2: { top: "38%", left: "63%" },    // Central Midfielder 2
-    RM: { top: "25%", left: "80%" },     // Right Midfielder
-    ST1: { top: "10%", left: "60%" },    // Striker 1
-    ST2: { top: "10%", left: "40%" },    // Striker 2
-    ST3: { top: "10%", left: "50%" },    // Striker 3
-  },
-  "4-4-2": {
-    GK: { top: "83%", left: "50%" },     // Goalkeeper
-    LB: { top: "65%", left: "30%" },     // Left-back
-    CB1: { top: "60%", left: "50%" },    // Center-back 1
-    CB2: { top: "65%", left: "70%" },    // Center-back 2
-    RB: { top: "58%", left: "85%" },     // Right-back
-    LM: { top: "25%", left: "20%" },     // Left Midfielder
-    CM1: { top: "38%", left: "37%" },    // Central Midfielder 1
-    CM2: { top: "38%", left: "63%" },    // Central Midfielder 2
-    RM: { top: "25%", left: "80%" },     // Right Midfielder
-    ST1: { top: "10%", left: "60%" },    // Striker 1
-    ST2: { top: "10%", left: "40%" },    // Striker 2
-  },
-  "3-4-3": {
-    GK: { top: "83%", left: "50%" },     // Goalkeeper
-    LB: { top: "65%", left: "30%" },     // Left-back
-    CB1: { top: "60%", left: "50%" },    // Center-back 1
-    CB2: { top: "65%", left: "70%" },    // Center-back 2
-    RB: { top: "58%", left: "85%" },     // Right-back
-    LM: { top: "25%", left: "20%" },     // Left Midfielder
-    CM1: { top: "38%", left: "37%" },    // Central Midfielder 1
-    CM2: { top: "38%", left: "63%" },    // Central Midfielder 2
-    RM: { top: "25%", left: "80%" },     // Right Midfielder
-    ST1: { top: "10%", left: "60%" },    // Striker 1
-    ST2: { top: "10%", left: "40%" },    // Striker 2
-    ST3: { top: "10%", left: "50%" },    // Striker 3
-  },
-  "4-2-3-1": {
-    GK: { top: "83%", left: "50%" },     // Goalkeeper
-    LB: { top: "65%", left: "30%" },     // Left-back
-    CB1: { top: "60%", left: "50%" },    // Center-back 1
-    CB2: { top: "65%", left: "70%" },    // Center-back 2
-    RB: { top: "58%", left: "85%" },     // Right-back
-    CDM1: { top: "50%", left: "40%" },   // Central Defensive Midfielder 1
-    CDM2: { top: "50%", left: "60%" },   // Central Defensive Midfielder 2
-    CAM1: { top: "35%", left: "35%" },   // Central Attacking Midfielder 1
-    CAM2: { top: "35%", left: "65%" },   // Central Attacking Midfielder 2
-    ST: { top: "10%", left: "50%" },     // Striker
-  }
-  // Add more formations if necessary
-};
+// Formation 
 
-// Select DOM elements for the dropdown
+// Variables
 const formationDropdown = document.getElementById("formationDropdown");
 const formationList = document.getElementById("formationList");
 const selectedFormation = document.getElementById("selectedFormation");
-const formationWrapper = document.getElementById("formationWrapper");
 
-// Populate the dropdown
-const formations = Object.keys(formationsData);
-formations.forEach((formation) => {
-  const option = document.createElement("div");
-  option.className = "p-2 bg-gray-700 hover:bg-gray-600 text-white rounded text-center cursor-pointer";
-  option.textContent = formation;
+// Football formations
+const formations = ["1", "4-4-2", "4-3-3", "3-5-2", "5-3-2", "4-2-3-1", "4-1-4-1", "3-4-3"];
 
-  option.addEventListener("click", () => {
-    // Set the selected value and close the dropdown
-    selectedFormation.textContent = formation;
-    formationList.classList.add("hidden");
-    updatePlayerPositions(formation); // Update positions based on selected formation
-  });
-
-  formationList.appendChild(option);
-});
-
-// Toggle dropdown visibility
-formationDropdown.addEventListener("click", () => {
-  formationList.classList.toggle("hidden");
-});
-
-// Close dropdown when clicking outside
-document.addEventListener("click", (event) => {
-  if (!formationWrapper.contains(event.target)) {
-    formationList.classList.add("hidden");
-  }
-});
-
-// Function to update player positions based on the selected formation
-function updatePlayerPositions(formation) {
-  const selectedPositions = formationsData[formation];
-  if (!selectedPositions) return;
-
-  // Loop through each player role and update their position on the pitch
-  Object.keys(selectedPositions).forEach((role) => {
-    const position = selectedPositions[role];
-    const playerElement = document.getElementById(`${role.toLowerCase()}-button`);
-    const roleTextElement = document.getElementById(`${role.toLowerCase()}-role`);
-
-    // Ensure the player exists
-    if (playerElement) {
-      playerElement.style.transition = "top 0.5s, left 0.5s"; // Add smooth transition
-      playerElement.style.top = position.top;
-      playerElement.style.left = position.left;
-    }
-
-    // Ensure the role text exists and update it if the role is part of the selected formation
-    if (roleTextElement) {
-      if (formation.includes(role.toUpperCase())) {
-        roleTextElement.textContent = role; // Update the role text
-      } else {
-        roleTextElement.textContent = ""; // Hide the role text if the role is not part of the formation
-      }
-    }
+// Populate dropdown with formations
+function populateFormationList() {
+  formations.forEach((formation) => {
+    const option = document.createElement("div");
+    option.className =
+      "p-2 bg-gray-700 text-white rounded cursor-pointer hover:bg-gray-600 transition duration-200";
+    option.textContent = formation;
+    option.onclick = () => selectFormation(formation);
+    formationList.appendChild(option);
   });
 }
+
+// Show/Hide dropdown options
+function toggleFormationList() {
+  formationList.classList.toggle("hidden");
+}
+
+// Handle formation selection
+function selectFormation(formation) {
+  selectedFormation.textContent = formation; // Update selected text
+  formationList.classList.add("hidden"); // Hide dropdown
+}
+
+// Initialize the dropdown on page load
+document.addEventListener("DOMContentLoaded", () => {
+  populateFormationList();
+});
+
+
+// Test 
+// Formation mapping for player positions using existing IDs
+const formationMappings = {
+  "4-3-3": {
+    GK: { top: "80%", left: "50%" },
+    LB: { top: "58%", left: "15%" },
+    CB1: { top: "65%", left: "35%" },
+    CB2: { top: "65%", left: "65%" },
+    RB: { top: "58%", left: "85%" },
+    CM1: { top: "38%", left: "30%" },
+    CDM: { top: "50%", left: "50%" },
+    CM2: { top: "38%", left: "70%" },
+    LW: { top: "20%", left: "20%" },
+    ST: { top: "10%", left: "50%" },
+    RW: { top: "20%", left: "80%" },
+  },
+  "4-4-2": {
+    GK: { top: "80%", left: "50%" },
+    LB: { top: "58%", left: "15%" },
+    CB1: { top: "65%", left: "35%" },
+    CB2: { top: "65%", left: "65%" },
+    RB: { top: "58%", left: "85%" },
+    LW: { top: "25%", left: "20%" },
+    CM1: { top: "38%", left: "37%" },
+    CM2: { top: "38%", left: "63%" },
+    CDM: { top: "10%", left: "40%" },
+    RW: { top: "25%", left: "80%" },
+    ST: { top: "10%", left: "60%" },
+  },
+  "4-2-3-1": {
+    GK: { top: "80%", left: "50%" },
+    LB: { top: "58%", left: "15%" },
+    CB1: { top: "65%", left: "35%" },
+    CB2: { top: "65%", left: "65%" },
+    RB: { top: "58%", left: "85%" },
+    CDM: { top: "27%", left: "50%" },
+    CM1: { top: "38%", left: "35%" },
+    CM2: { top: "38%", left: "65%" },
+    LW: { top: "20%", left: "20%" },
+    RW: { top: "20%", left: "80%" },
+    ST: { top: "5%", left: "50%" },
+  },
+  "4-1-4-1": {
+    GK: { top: "80%", left: "50%" },
+    LB: { top: "58%", left: "15%" },
+    CB1: { top: "65%", left: "35%" },
+    CB2: { top: "65%", left: "65%" },
+    RB: { top: "58%", left: "85%" },
+    CDM: { top: "45%", left: "50%" },
+    CM1: { top: "27%", left: "35%" },
+    CM2: { top: "27%", left: "65%" },
+    LW: { top: "20%", left: "20%" },
+    RW: { top: "20%", left: "80%" },
+    ST: { top: "12%", left: "50%" },
+  },
+  "3-4-3": {
+    GK: { top: "83%", left: "50%" },
+    CB1: { top: "65%", left: "30%" },
+    CB2: { top: "61%", left: "50%" },
+    LB: { top: "65%", left: "70%" },
+    RB: { top: "32%", left: "80%" },
+    CM1: { top: "38%", left: "37%" },
+    CM2: { top: "38%", left: "63%" },
+    LW: { top: "32%", left: "20%" },
+    CDM: { top: "10%", left: "65%" },
+    RW: { top: "10%", left: "35%" },
+    ST: { top: "15%", left: "50%" },
+  },
+};
+
+// Function to update player positions based on selected formation
+function updateFormation() {
+  const selectedFormation = document.getElementById("formation").value;
+  const positions = formationMappings[selectedFormation];
+
+  // Iterate over each player ID and update its position with animation
+  for (const playerId in positions) {
+    const playerDiv = document.getElementById(playerId);
+    if (playerDiv) {
+      const { top, left } = positions[playerId];
+      
+      // Add animation transition before making changes
+      playerDiv.classList.add('transition-all', 'duration-500', 'ease-out');
+
+      // Update the position (top and left)
+      playerDiv.style.top = top;
+      playerDiv.style.left = left;
+
+      // Remove transition after animation completes
+      setTimeout(() => {
+        playerDiv.classList.remove('transition-all', 'duration-500', 'ease-out');
+      }, 500); // Duration of the animation
+    }
+  }
+
+  // Now check for specific formation changes that require element text adjustments
+  updatePlayerRoles(selectedFormation);
+}
+
+// Function to update player roles based on selected formation
+function updatePlayerRoles(selectedFormation) {
+  switch (selectedFormation) {
+    case "3-4-3":
+      // Update text for 3-4-3 formation
+      document.getElementById("LBS").textContent = "CB";  // LB becomes CB
+      document.getElementById("CBS").textContent = "CB";  // LB becomes CB
+      document.getElementById("RBS").textContent = "RM";  // RB becomes RM
+      document.getElementById("RWS").textContent = "ST";  // RW becomes ST
+      document.getElementById("STS").textContent = "CF";   // ST becomes CF
+      document.getElementById("CDMS").textContent = "ST";  // CDM becomes ST
+      document.getElementById("CMS").textContent = "CM";  // LB becomes CB
+      document.getElementById("LWS").textContent = "LM";  // LB becomes CB
+
+      break;
+
+      case "4-3-3":
+      // Update text for 3-4-3 formation
+      document.getElementById("CBS").textContent = "CB";  // LB becomes CB
+      document.getElementById("RBS").textContent = "RB";  // LB becomes CB
+      document.getElementById("LBS").textContent = "LB";  // LB becomes CB
+      document.getElementById("CMS").textContent = "CM";  // RB becomes RM
+      document.getElementById("RWS").textContent = "RW";  // RW becomes ST
+      document.getElementById("LWS").textContent = "LW";
+      document.getElementById("STS").textContent = "ST";   // ST becomes CF
+      document.getElementById("CDMS").textContent = "CDM";  // CDM becomes ST
+      break;
+
+    case "4-4-2":
+      // Update text for 4-4-2 formation
+      document.getElementById("CDMS").textContent = "ST";  // CDM becomes ST
+      document.getElementById("CBS").textContent = "CB";  // CDM becomes ST
+      document.getElementById("CMS").textContent = "CM";  // CDM becomes ST
+      document.getElementById("LWS").textContent = "LW";  // CDM becomes ST
+      document.getElementById("RWS").textContent = "RW";  // CDM becomes ST
+      document.getElementById("STS").textContent = "ST";  // CDM becomes ST
+      document.getElementById("RBS").textContent = "RB";  // CDM becomes ST
+      document.getElementById("LBS").textContent = "LB";  // CDM becomes ST
+      break;
+
+      
+    case "4-2-3-1":
+      // Update text for 4-2-3-1 formation
+      document.getElementById("CDMS").textContent = "CAM"; // CDM becomes CAM
+      document.getElementById("RBS").textContent = "RB";  // CDM becomes ST
+      document.getElementById("LBS").textContent = "LB";  // CDM becomes ST
+      document.getElementById("RWS").textContent = "RW";  // CDM becomes ST
+      document.getElementById("LWS").textContent = "LW";  // CDM becomes ST
+      document.getElementById("STS").textContent = "ST";  // CDM becomes ST
+      break;
+
+    case "4-1-4-1":
+      // Update text for 4-1-4-1 formation
+      document.getElementById("CMS").textContent = "CAM";  // CM becomes CAM
+      document.getElementById("CDMS").textContent = "CM";  // CDM becomes ST
+      document.getElementById("LBS").textContent = "LB";  // CDM becomes ST
+      document.getElementById("RBS").textContent = "RB";  // CDM becomes ST
+      document.getElementById("STS").textContent = "ST";  // CDM becomes ST
+      document.getElementById("RWS").textContent = "RW";  // CDM becomes ST
+      document.getElementById("LWS").textContent = "LW";  // CDM becomes ST
+
+      break;
+  }
+}
+
+// Attach event listener to formation dropdown
+document.getElementById("formation").addEventListener("change", updateFormation);
+
+// Initialize on page load
+document.addEventListener("DOMContentLoaded", updateFormation);
+
+// test 
+
+ // Get elements
+ const mainPosition = document.getElementById('mainPosition');
+ const goalkeeperAttributes = document.getElementById('goalkeeperAttributes');
+ const outfieldAttributes = document.getElementById('outfieldAttributes');
+ 
+ // Show or hide attributes based on main position
+ mainPosition.addEventListener('change', function() {
+   if (mainPosition.value === "GK") {
+     goalkeeperAttributes.classList.remove('hidden');
+     outfieldAttributes.classList.add('hidden');
+   } else {
+     outfieldAttributes.classList.remove('hidden');
+     goalkeeperAttributes.classList.add('hidden');
+   }
+ });

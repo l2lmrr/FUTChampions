@@ -35,8 +35,8 @@
             <div class="relative">
                 <img src="pitch.svg" alt="Pitch" class="max-w-full h-auto">
 
-                <!-- Goalkeeper -->
-                <div class="absolute top-[80%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                <!-- Goalkeeper --> 
+                <div class="absolute top-[80%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center"  id="GK">
                     <button 
                     id="player-button"
                     class="flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-transform transition-shadow duration-200 rounded-full" 
@@ -46,13 +46,13 @@
                         +
                     </div>
                 </button>
-                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md">
+                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md" id="GKS">
                         GK
                     </div>
                 </div>
 
                 <!-- Defenders -->
-                <div class="absolute top-[58%] left-[15%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                <div class="absolute top-[58%] left-[15%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center"  id="LB">
                     <button 
                     class="flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-transform transition-shadow duration-200 rounded-full" 
                     style="width: 120px; height: 120px; background-image: url('Spot.webp'); background-size: contain; background-repeat: no-repeat; background-position: center;">
@@ -61,11 +61,24 @@
                         +
                     </div>
                 </button>
-                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md">
+                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md" id="LBS">
                         LB
                     </div>
                 </div>
-                <div class="absolute top-[65%] left-[35%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                <div class="absolute top-[65%] left-[35%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center"  id="CB1">
+                    <button 
+                    class="flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-transform transition-shadow duration-200 rounded-full" 
+                    style="width: 120px; height: 120px; background-image: url('Spot.webp'); background-size: contain; background-repeat: no-repeat; background-position: center;">
+                    <div class="flex items-center justify-center rounded-full bg-white text-gray-800 font-bold" 
+                        style="width: 20px; height: 20px; font-size: 12px;">
+                        +
+                    </div>
+                </button>
+                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md" id="CBS">
+                        CB
+                    </div>
+                </div>
+                <div class="absolute top-[65%] left-[65%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center"  id="CB2">
                     <button 
                     class="flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-transform transition-shadow duration-200 rounded-full" 
                     style="width: 120px; height: 120px; background-image: url('Spot.webp'); background-size: contain; background-repeat: no-repeat; background-position: center;">
@@ -78,7 +91,7 @@
                         CB
                     </div>
                 </div>
-                <div class="absolute top-[65%] left-[65%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                <div class="absolute top-[58%] left-[85%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center"  id="RB">
                     <button 
                     class="flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-transform transition-shadow duration-200 rounded-full" 
                     style="width: 120px; height: 120px; background-image: url('Spot.webp'); background-size: contain; background-repeat: no-repeat; background-position: center;">
@@ -87,26 +100,13 @@
                         +
                     </div>
                 </button>
-                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md">
-                        CB
-                    </div>
-                </div>
-                <div class="absolute top-[58%] left-[85%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
-                    <button 
-                    class="flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-transform transition-shadow duration-200 rounded-full" 
-                    style="width: 120px; height: 120px; background-image: url('Spot.webp'); background-size: contain; background-repeat: no-repeat; background-position: center;">
-                    <div class="flex items-center justify-center rounded-full bg-white text-gray-800 font-bold" 
-                        style="width: 20px; height: 20px; font-size: 12px;">
-                        +
-                    </div>
-                </button>
-                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md">
+                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md" id="RBS">
                         RB
                     </div>
                 </div>
 
                 <!-- Midfielders -->
-                <div class="absolute top-[38%] left-[30%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                <div class="absolute top-[38%] left-[30%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center" id="CM1">
                     <button 
                     class="flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-transform transition-shadow duration-200 rounded-full" 
                     style="width: 120px; height: 120px; background-image: url('Spot.webp'); background-size: contain; background-repeat: no-repeat; background-position: center;">
@@ -115,11 +115,11 @@
                         +
                     </div>
                 </button>
-                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md">
+                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md" id="CMS">
                         CM
                     </div>
                 </div>
-                <div class="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                <div class="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center" id="CDM">
                     <button 
                     class="flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-transform transition-shadow duration-200 rounded-full" 
                     style="width: 120px; height: 120px; background-image: url('Spot.webp'); background-size: contain; background-repeat: no-repeat; background-position: center;">
@@ -128,11 +128,12 @@
                         +
                     </div>
                 </button>
-                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md">
+                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md" id="CDMS">
                         CDM
                     </div>
                 </div>
-                <div class="absolute top-[38%] left-[70%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                <div class="absolute top-[38%] left-[70%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center" id="CM2"
+                >
                     <button 
                     class="flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-transform transition-shadow duration-200 rounded-full" 
                     style="width: 120px; height: 120px; background-image: url('Spot.webp'); background-size: contain; background-repeat: no-repeat; background-position: center;">
@@ -141,13 +142,14 @@
                         +
                     </div>
                 </button>
-                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md">
+                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md" id="CMS">
                         CM
                     </div>
                 </div>
 
                 <!-- Forwards -->
-                <div class="absolute top-[20%] left-[20%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                <div class="absolute top-[20%] left-[20%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center" id="LW"
+                >
                     <button 
                     class="flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-transform transition-shadow duration-200 rounded-full" 
                     style="width: 120px; height: 120px; background-image: url('Spot.webp'); background-size: contain; background-repeat: no-repeat; background-position: center;">
@@ -156,11 +158,12 @@
                         +
                     </div>
                 </button>
-                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md">
+                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md" id="LWS">
                         LW
                     </div>
                 </div>
-                <div class="absolute top-[10%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                <div class="absolute top-[10%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center" id="ST"
+                >
                     <button 
                     class="flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-transform transition-shadow duration-200 rounded-full" 
                     style="width: 120px; height: 120px; background-image: url('Spot.webp'); background-size: contain; background-repeat: no-repeat; background-position: center;">
@@ -169,11 +172,11 @@
                         +
                     </div>
                 </button>
-                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md">
+                <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md" id="STS">
                         ST
                     </div>
                 </div>
-                <div class="absolute top-[20%] left-[80%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center">
+                <div class="absolute top-[20%] left-[80%] transform -translate-x-1/2 -translate-y-1/2 flex flex-col items-center"  id="RW">
                     <button 
                         class="flex items-center justify-center shadow-md hover:shadow-lg hover:scale-110 transition-transform transition-shadow duration-200 rounded-full" 
                         style="width: 120px; height: 120px; background-image: url('Spot.webp'); background-size: contain; background-repeat: no-repeat; background-position: center;">
@@ -182,7 +185,7 @@
                             +
                         </div>
                     </button>
-                    <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md">
+                    <div class="mt-2 bg-gray-800 text-white text-sm font-medium rounded-md px-3 py-1 shadow-md" id="RWS">
                         RW
                     </div>
                 </div>
@@ -191,27 +194,28 @@
             <!-- Sidebar Controls -->
             <aside class="bg-gray-800 rounded-lg p-6">
             
-                <!-- Formation Dropdown -->
-                <div class="mb-4">
-                  <label for="formation" class="block text-sm font-bold mb-1">Formation</label>
-                  <div id="formationWrapper" class="relative">
-                    <!-- Dropdown Header -->
-                    <div
-                      id="formationDropdown"
-                      class="w-full p-2 bg-gray-700 border border-gray-600 rounded cursor-pointer flex items-center justify-between"
-                    >
-                      <span id="selectedFormation">Select Formation</span>
-                      <span>▼</span>
-                    </div>
-                    <!-- Dropdown Options -->
-                    <div
-                      id="formationList"
-                      class="hidden absolute top-full left-0 w-full bg-gray-800 border border-gray-600 rounded mt-1 grid grid-cols-3 gap-1 p-2 z-10 max-h-48 overflow-y-auto"
-                    >
-                      <!-- Options will be dynamically generated -->
-                    </div>
+              <div class="mb-4">
+                <label for="formation" class="block text-sm font-bold mb-1 text-white">Formation</label>
+                <div id="formationWrapper" class="relative">
+                  <!-- Custom Styling for the Select -->
+                  <select
+                  id="formation"
+                  class="appearance-none w-full p-2 bg-gray-700 border border-gray-600 rounded cursor-pointer text-white"
+                  onchange="updateFormation()"
+                >
+                  <!-- Predefined Options -->
+                  <option value="4-3-3" selected>4-3-3</option>
+                  <option value="4-4-2" >4-4-2</option>
+                  <option value="4-2-3-1" >4-2-3-1</option>
+                  <option value="4-1-4-1" >4-1-4-1</option>
+                  <option value="3-4-3" >3-4-3</option>
+                </select>
+                  <!-- Dropdown Arrow -->
+                  <div class="pointer-events-none absolute top-2 right-2 text-white">
+                    ▼
                   </div>
                 </div>
+              </div>
 
               <!-- Players List -->
                 <div class="mb-4">
@@ -236,111 +240,154 @@
 <!-- Player data container -->
 <div id="player-data-container" class="mt-4 p-4 border rounded shadow"></div>
 
-
-<!--  add form -->
+<!-- Add Player Form -->
 <div id="playerFormModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden">
-  <div class="bg-gray-800 p-4 rounded-lg w-[90%] max-w-lg relative">
- 
-    <h2 class="text-lg font-bold mb-3">Add New Player</h2>
-    <form id="playerForm" class="grid grid-cols-2 gap-2">
-      <div>
-        <label for="name" class="block text-sm font-bold mb-1">Name</label>
-        <input id="name" type="text" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
+  <div class="bg-gray-800 p-4 rounded-lg w-full sm:w-[90%] lg:w-[70%] max-w-5xl mx-auto relative">
+    <h2 class="text-lg font-bold mb-4 text-center text-white">Add New Player</h2>
+    <form id="playerForm" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2">
+      <!-- Name -->
+      <div class="col-span-1">
+        <label for="name" class="block text-xs font-bold text-gray-300 mb-1">Name</label>
+        <input id="name" type="text" class="w-full p-1.5 bg-gray-700 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-green-500" required>
       </div>
-      <div>
-        <label for="photo" class="block text-sm font-bold mb-1">Photo URL</label>
-        <input id="photo" type="url" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
+      <!-- Photo URL -->
+      <div class="col-span-1">
+        <label for="photo" class="block text-xs font-bold text-gray-300 mb-1">Photo URL</label>
+        <input id="photo" type="url" class="w-full p-1.5 bg-gray-700 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-green-500" required>
       </div>
-      <div>
-        <label for="mainPosition" class="block text-sm font-bold mb-1">Main Position</label>
-        <select id="mainPosition" class="w-full p-1 bg-gray-700 border border-gray-600 rounded">
-          <option>GK</option>
-          <option>LB</option>
-          <option>CB</option>
-          <option>RB</option>
-          <option>CDM</option>
-          <option>CM</option>
-          <option>CAM</option>
-          <option>LM</option>
-          <option>RM</option>
-          <option>LW</option>
-          <option>RW</option>
-          <option>ST</option>
+      <!-- Main Position -->
+      <div class="col-span-1">
+        <label for="mainPosition" class="block text-xs font-bold text-gray-300 mb-1">Main Position</label>
+        <select id="mainPosition" class="w-full p-1.5 bg-gray-700 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-green-500" required>
+          <option value="" disabled selected>Select a Role</option>
+          <option value="GK">GK</option>
+          <option value="LB">LB</option>
+          <option value="CB">CB</option>
+          <option value="RB">RB</option>
+          <option value="CDM">CDM</option>
+          <option value="CM">CM</option>
+          <option value="CAM">CAM</option>
+          <option value="LM">LM</option>
+          <option value="RM">RM</option>
+          <option value="LW">LW</option>
+          <option value="RW">RW</option>
+          <option value="ST">ST</option>
         </select>
       </div>
-      <div>
-        <label for="secondaryPosition" class="block text-sm font-bold mb-1">Secondary Position</label>
-        <select id="secondaryPosition" class="w-full p-1 bg-gray-700 border border-gray-600 rounded">
-          <option>GK</option>
-          <option>LB</option>
-          <option>CB</option>
-          <option>RB</option>
-          <option>CDM</option>
-          <option>CM</option>
-          <option>CAM</option>
-          <option>LM</option>
-          <option>RM</option>
-          <option>LW</option>
-          <option>RW</option>
-          <option>ST</option>
+      <!-- Secondary Position -->
+      <div class="col-span-1">
+        <label for="secondaryPosition" class="block text-xs font-bold text-gray-300 mb-1">Secondary Position</label>
+        <select id="secondaryPosition" class="w-full p-1.5 bg-gray-700 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-green-500" disabled>
+          <option value="" disabled selected>Select a Role</option>
+          <option value="GK">GK</option>
+          <option value="LB">LB</option>
+          <option value="CB">CB</option>
+          <option value="RB">RB</option>
+          <option value="CDM">CDM</option>
+          <option value="CM">CM</option>
+          <option value="CAM">CAM</option>
+          <option value="LM">LM</option>
+          <option value="RM">RM</option>
+          <option value="LW">LW</option>
+          <option value="RW">RW</option>
+          <option value="ST">ST</option>
         </select>
       </div>
-      <div>
-        <label for="nationality" class="block text-sm font-bold mb-1">Nationality</label>
-        <input id="nationality" type="text" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
+      <!-- Nationality -->
+      <div class="col-span-1">
+        <label for="nationality" class="block text-xs font-bold text-gray-300 mb-1">Nationality</label>
+        <input id="nationality" type="text" class="w-full p-1.5 bg-gray-700 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-green-500" required>
       </div>
-      <div>
-        <label for="flag" class="block text-sm font-bold mb-1">Flag URL</label>
-        <input id="flag" type="url" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
+      <!-- Flag URL -->
+      <div class="col-span-1">
+        <label for="flag" class="block text-xs font-bold text-gray-300 mb-1">Flag URL</label>
+        <input id="flag" type="url" class="w-full p-1.5 bg-gray-700 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-green-500" required>
       </div>
-      <div>
-        <label for="club" class="block text-sm font-bold mb-1">Club</label>
-        <input id="club" type="text" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
+      <!-- Club -->
+      <div class="col-span-1">
+        <label for="club" class="block text-xs font-bold text-gray-300 mb-1">Club</label>
+        <input id="club" type="text" class="w-full p-1.5 bg-gray-700 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-green-500" required>
       </div>
-      <div>
-        <label for="logo" class="block text-sm font-bold mb-1">Club Logo URL</label>
-        <input id="logo" type="url" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
+      <!-- Club Logo URL -->
+      <div class="col-span-1">
+        <label for="logo" class="block text-xs font-bold text-gray-300 mb-1">Club Logo URL</label>
+        <input id="logo" type="url" class="w-full p-1.5 bg-gray-700 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-green-500" required>
       </div>
-      <div>
-        <label for="Rating" class="block text-sm font-bold mb-1">Rating</label>
-        <input id="Rating" type="number" min="5" max="99" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
+      <!-- Rating -->
+      <div class="col-span-1">
+        <label for="Rating" class="block text-xs font-bold text-gray-300 mb-1">Rating</label>
+        <input id="Rating" type="number" min="5" max="99" class="w-full p-1.5 bg-gray-700 text-white border border-gray-600 rounded focus:outline-none focus:ring-2 focus:ring-green-500" required>
       </div>
-      <div>
-        <label for="pace" class="block text-sm font-bold mb-1">Pace</label>
-        <input id="pace" type="number" min="5" max="99" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
+
+      <!-- Goalkeeper Attributes -->
+      <div id="goalkeeperAttributes" class="hidden col-span-3 grid grid-cols-3 gap-2">
+        <div>
+          <label for="diving" class="block text-xs font-bold text-gray-300 mb-1">Diving</label>
+          <input id="diving" type="number" min="5" max="99" class="w-full p-1.5 bg-gray-700 text-white border border-gray-600 rounded" required>
+        </div>
+        <div>
+          <label for="handling" class="block text-xs font-bold text-gray-300 mb-1">Handling</label>
+          <input id="handling" type="number" min="5" max="99" class="w-full p-1.5 bg-gray-700 text-white border border-gray-600 rounded" required>
+        </div>
+        <div>
+          <label for="kicking" class="block text-xs font-bold text-gray-300 mb-1">Kicking</label>
+          <input id="kicking" type="number" min="5" max="99" class="w-full p-1.5 bg-gray-700 text-white border border-gray-600 rounded" required>
+        </div>
+        <div>
+          <label for="reflexes" class="block text-xs font-bold text-gray-300 mb-1">Reflexes</label>
+          <input id="reflexes" type="number" min="5" max="99" class="w-full p-1.5 bg-gray-700 text-white border border-gray-600 rounded" required>
+        </div>
+        <div>
+          <label for="speed" class="block text-xs font-bold text-gray-300 mb-1">Speed</label>
+          <input id="speed" type="number" min="5" max="99" class="w-full p-1.5 bg-gray-700 text-white border border-gray-600 rounded" required>
+        </div>
+        <div>
+          <label for="positioning" class="block text-xs font-bold text-gray-300 mb-1">Positioning</label>
+          <input id="positioning" type="number" min="5" max="99" class="w-full p-1.5 bg-gray-700 text-white border border-gray-600 rounded" required>
+        </div>
       </div>
-      <div>
-        <label for="shooting" class="block text-sm font-bold mb-1">Shooting</label>
-        <input id="shooting" type="number" min="5" max="99" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
+
+      <!-- Outfield Attributes -->
+      <div id="outfieldAttributes" class="hidden col-span-3 grid grid-cols-3 gap-2">
+        <div>
+          <label for="pace" class="block text-xs font-bold text-gray-300 mb-1">Pace</label>
+          <input id="pace" type="number" min="5" max="99" class="w-full p-1.5 bg-gray-700 text-white border border-gray-600 rounded" required>
+        </div>
+        <div>
+          <label for="shooting" class="block text-xs font-bold text-gray-300 mb-1">Shooting</label>
+          <input id="shooting" type="number" min="5" max="99" class="w-full p-1.5 bg-gray-700 text-white border border-gray-600 rounded" required>
+        </div>
+        <div>
+          <label for="passing" class="block text-xs font-bold text-gray-300 mb-1">Passing</label>
+          <input id="passing" type="number" min="5" max="99" class="w-full p-1.5 bg-gray-700 text-white border border-gray-600 rounded" required>
+        </div>
+        <div>
+          <label for="dribbling" class="block text-xs font-bold text-gray-300 mb-1">Dribbling</label>
+          <input id="dribbling" type="number" min="5" max="99" class="w-full p-1.5 bg-gray-700 text-white border border-gray-600 rounded" required>
+        </div>
+        <div>
+          <label for="defending" class="block text-xs font-bold text-gray-300 mb-1">Defending</label>
+          <input id="defending" type="number" min="5" max="99" class="w-full p-1.5 bg-gray-700 text-white border border-gray-600 rounded" required>
+        </div>
+        <div>
+          <label for="physical" class="block text-xs font-bold text-gray-300 mb-1">Physical</label>
+          <input id="physical" type="number" min="5" max="99" class="w-full p-1.5 bg-gray-700 text-white border border-gray-600 rounded" required>
+        </div>
       </div>
-      <div>
-        <label for="passing" class="block text-sm font-bold mb-1">Passing</label>
-        <input id="passing" type="number" min="5" max="99" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
-      </div>
-      <div>
-        <label for="dribbling" class="block text-sm font-bold mb-1">Dribbling</label>
-        <input id="dribbling" type="number" min="5" max="99" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
-      </div>
-      <div>
-        <label for="defending" class="block text-sm font-bold mb-1">Defending</label>
-        <input id="defending" type="number" min="5" max="99" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
-      </div>
-      <div>
-        <label for="physical" class="block text-sm font-bold mb-1">Physical</label>
-        <input id="physical" type="number" min="5" max="99" class="w-full p-1 bg-gray-700 border border-gray-600 rounded" required>
-      </div>
-      <div class="flex justify-between col-span-2 mt-4">
+
+      <!-- Buttons -->
+      <div class="flex justify-between mt-4 col-span-3">
         <button 
           id="closeModalBtn" 
           type="button" 
-          class="bg-red-600 text-white font-bold py-2 px-3 rounded hover:bg-red-500 transition duration-300"
+          class="bg-red-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-red-500 transition duration-300"
         >
           Close
         </button>
         <button 
           id="addPlayerBtn" 
           type="submit" 
-          class="bg-green-600 text-white font-bold py-2 px-3 rounded hover:bg-green-500 transition duration-300"
+          class="bg-green-600 text-white font-bold py-2 px-4 rounded-lg hover:bg-green-500 transition duration-300"
         >
           Add Player
         </button>
@@ -348,7 +395,6 @@
     </form>
   </div>
 </div>
-
     
   <script src="FUT.js"></script>
 
