@@ -433,7 +433,7 @@ document.addEventListener("DOMContentLoaded", updateFormation);
  const mainPosition = document.getElementById('mainPosition');
  const goalkeeperAttributes = document.getElementById('goalkeeperAttributes');
  const outfieldAttributes = document.getElementById('outfieldAttributes');
- 
+
  // Show or hide attributes based on main position
  mainPosition.addEventListener('change', function() {
    if (mainPosition.value === "GK") {
@@ -959,7 +959,8 @@ function addPlayerToPitch(player, element){
       todelete = e.parentNode.querySelector("#addLineup div");
     }
   })
-  todelete.classList.add("hidden");
+  todelete.remove();
+
   const pa = document.createElement("div");
   pa.className = "absolute top-[6%] left-[10%]";
 // Create the main container
@@ -1065,3 +1066,5 @@ canceleditBtn.addEventListener("click", () => {
 });
 
 
+
+const checkplayers ()
