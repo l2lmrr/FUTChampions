@@ -694,7 +694,6 @@ cancelEditPlayerBtn.addEventListener("click", () => {
 // Event listener to allow only one checkbox selection at a time
 playersListToEdit.addEventListener("change", (event) => {
   if (event.target.type === "checkbox" && event.target.checked) {
-    // Uncheck all other checkboxes
     const checkboxes = playersListToEdit.querySelectorAll('input[type="checkbox"]');
     checkboxes.forEach(checkbox => {
       if (checkbox !== event.target) {
