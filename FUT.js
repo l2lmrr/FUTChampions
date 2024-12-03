@@ -365,33 +365,30 @@ function updateFormation() {
 function updatePlayerRoles(selectedFormation) {
   switch (selectedFormation) {
     case "3-4-3":
-      // Update text for 3-4-3 formation
-      document.getElementById("LBS").textContent = "CB";  // LB becomes CB
-      document.getElementById("CBS").textContent = "CB";  // LB becomes CB
-      document.getElementById("RBS").textContent = "RM";  // RB becomes RM
-      document.getElementById("RWS").textContent = "ST";  // RW becomes ST
-      document.getElementById("STS").textContent = "CF";   // ST becomes CF
-      document.getElementById("CDMS").textContent = "ST";  // CDM becomes ST
-      document.getElementById("CMS").textContent = "CM";  // LB becomes CB
-      document.getElementById("LWS").textContent = "LM";  // LB becomes CB
+      document.getElementById("LBS").textContent = "CB"; 
+      document.getElementById("RBS").textContent = "RM";  
+      document.getElementById("RWS").textContent = "ST";  
+      document.getElementById("STS").textContent = "CF";   
+      document.getElementById("CDMS").textContent = "ST";  
+      document.getElementById("CMSS").textContent = "CM";  
+      document.getElementById("CMS").textContent = "CM"; 
+      document.getElementById("LWS").textContent = "LM";  
 
       break;
 
       case "4-3-3":
-      // Update text for 3-4-3 formation
-      document.getElementById("CBS").textContent = "CB";  // LB becomes CB
-      document.getElementById("RBS").textContent = "RB";  // LB becomes CB
+      document.getElementById("CBS").textContent = "CB"; 
+      document.getElementById("RBS").textContent = "RB";  
       document.getElementById("LBS").textContent = "LB";  // LB becomes CB
       document.getElementById("CMS").textContent = "CM";  // RB becomes RM
       document.getElementById("RWS").textContent = "RW";  // RW becomes ST
       document.getElementById("LWS").textContent = "LW";
-      document.getElementById("CMSS").textContent = "CM";  // CM becomes CAM
+      document.getElementById("CMSS").textContent = "CM";  
       document.getElementById("STS").textContent = "ST";   // ST becomes CF
       document.getElementById("CDMS").textContent = "CDM";  // CDM becomes ST
       break;
 
     case "4-4-2":
-      // Update text for 4-4-2 formation
       document.getElementById("CDMS").textContent = "ST";  // CDM becomes ST
       document.getElementById("CBS").textContent = "CB";  // CDM becomes ST
       document.getElementById("CMS").textContent = "CM";  // CDM becomes ST
@@ -405,7 +402,6 @@ function updatePlayerRoles(selectedFormation) {
 
       
     case "4-2-3-1":
-      // Update text for 4-2-3-1 formation
       document.getElementById("CDMS").textContent = "CAM"; // CDM becomes CAM 
       document.getElementById("CMSS").textContent = "CM";  // CM becomes CAM
       document.getElementById("CMS").textContent = "CM";  // CM becomes CAM
@@ -417,7 +413,6 @@ function updatePlayerRoles(selectedFormation) {
       break;
 
     case "4-1-4-1":
-      // Update text for 4-1-4-1 formation
       document.getElementById("CMS").textContent = "CAM";  // CM becomes CAM
       document.getElementById("CMSS").textContent = "CAM";  // CM becomes CAM
       document.getElementById("CDMS").textContent = "CM";  // CDM becomes ST
@@ -431,13 +426,9 @@ function updatePlayerRoles(selectedFormation) {
   }
 }
 
-// Attach event listener to formation dropdown
 document.getElementById("formation").addEventListener("change", updateFormation);
 
-// Initialize on page load
 document.addEventListener("DOMContentLoaded", updateFormation);
-
-// test 
 
  // Get elements
  const mainPosition = document.getElementById('mainPosition');
@@ -969,7 +960,7 @@ function addPlayerToPitch(player, element){
       todelete = e.parentNode.querySelector("#addLineup div");
     }
   })
-  todelete.remove();
+  todelete.classList.add("hidden");
   const pa = document.createElement("div");
   pa.className = "absolute top-[6%] left-[10%]";
 // Create the main container
