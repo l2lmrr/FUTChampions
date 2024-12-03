@@ -427,7 +427,6 @@ function updatePlayerRoles(selectedFormation) {
 }
 
 document.getElementById("formation").addEventListener("change", updateFormation);
-
 document.addEventListener("DOMContentLoaded", updateFormation);
 
  // Get elements
